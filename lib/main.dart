@@ -55,16 +55,6 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Container(
                         alignment: Alignment.topCenter,
-                        child: TabPageSelector(
-                          color: DefaultTabController.of(context)?.index == 1
-                              ? Colors.blue[300]
-                              : Colors.grey[400],
-                          selectedColor:
-                              DefaultTabController.of(context)?.index == 1
-                                  ? Colors.white
-                                  : Colors.blue,
-                          indicatorSize: 8,
-                        ),
                       ),
                     ],
                   ),
@@ -78,13 +68,35 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-// 첫번째 페이지
+// 메인 페이지
 class FirstTab extends StatelessWidget {
   const FirstTab({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('메인 페이지~아아아아아아아아아아'));
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Colors.red[300]!, Colors.red[600]!]),
+      ),
+      child: Container(
+        alignment: Alignment.topCenter,
+        margin: EdgeInsets.only(
+          top: 100,
+          left: 20,
+          right: 20,
+        ),
+        width: 50,
+        height: 50,
+        decoration: BoxDecoration(shape: BoxShape.circle),
+        child: Image.network(
+          "https://velog.velcdn.com/images/subak/post/03defd1c-a5a9-4f69-8dbd-9b2cf4b1d24b/image.png",
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
   }
 }
 
@@ -94,7 +106,58 @@ class SecondTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('첫번째 페이지'));
+    return Container(
+      color: Colors.blue[500],
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 40, left: 20),
+            child: Row(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    DefaultTabController.of(context).animateTo(0);
+                  },
+                  child: Icon(
+                    Icons.arrow_left,
+                    color: Colors.black,
+                    size: 30,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Text(
+            "박준수",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+              color: Colors.white,
+            ),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Container(
+            alignment: Alignment.center,
+            width: 200,
+            height: 200,
+            decoration:
+                BoxDecoration(color: Colors.blue[300], shape: BoxShape.circle),
+            child: Image.network(
+              "http://wagzack.synology.me/js_trans.png",
+              fit: BoxFit.cover,
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Text('MBTI ▶ INFP'),
+          Text("종족 : 인간"),
+        ],
+      ),
+    );
   }
 }
 
