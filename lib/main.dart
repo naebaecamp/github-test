@@ -84,7 +84,7 @@ class FirstTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('메인 페이지'));
+    return Center(child: Text('메인 페이지~아아아아아아아아아아'));
   }
 }
 
