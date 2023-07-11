@@ -104,7 +104,28 @@ class ThirdTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('두번째 페이지'));
+    // AppBar(
+    //   leading: IconButton(
+    //     onPressed: () {},
+    //     icon: Icon(Icons.arrow_back_rounded),
+    //   ),
+    // );
+    return Column(
+      //mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 140, bottom: 30),
+          child: Icon(Icons.account_circle, size: 150),
+        ),
+        Container(
+          height: 2.0,
+          width: 250.0,
+          color: Colors.black,
+        ),
+        Text("팀원")
+      ],
+    );
   }
 }
 
