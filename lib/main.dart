@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'sub3.dart';
 
 void main() {
   runApp(const MyApp());
@@ -109,14 +112,6 @@ class ThirdTab extends StatelessWidget {
 }
 
 // 4번째 페이지
-class FourTab extends StatelessWidget {
-  const FourTab({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(child: Text('세번째 페이지'));
-  }
-}
 
 // 5번째 페이지
 class FiveTab extends StatelessWidget {
