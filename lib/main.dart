@@ -746,6 +746,97 @@ class ThirdTab extends StatelessWidget {
 }
 
 // 4번째 페이지
+class FourthTab extends StatelessWidget {
+  const FourthTab({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.green[200],
+        appBar: AppBar(
+          title: Text(
+            "박준범",
+            style: TextStyle(fontSize: 20),
+          ), // Text
+        ), // AppBar
+        body: SingleChildScrollView(
+            child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Column(children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Image.network(
+                      "http://wagzack.synology.me/jb_trans.png",
+                      width: 81,
+                    ), // Image.network
+                  ), // Padding
+                  Text(
+                    "박준범",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      color: Colors.black,
+                    ),
+                    textAlign: TextAlign.center,
+                  ), 
+                  Text(
+                    'MBTI | ESTP',
+                    style: TextStyle(fontSize: 20),
+                  ), // Text
+                  Container(
+                    width: 200,
+                    alignment: Alignment.center,
+                    child: Text(
+                      "소개 : 안녕하십니까 9조 팀원 박준범 입니다. 여러분들과 함께 다양한 프로잭트를 진행하고 서로 좋은 결과를 맞이하고 싶고 저의 좌우명은 의지만 있으면 못할게 없다 입니다 그렇기에 남들보다 노력하는 사람이 되고싶습니다 만나서 반갑습니다. ",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ), // Container
+                  Container(
+                    width: 200,
+                    alignment: Alignment.center,
+                    child: Text(
+                      "스타일 : 자기주장이 강한편이지만 타인의 의견도 듣는걸 좋아합니다 저 스스로를 과대평가하는걸 싫어하기에 겸손해지고 싶어합니다 ",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ), // Container
+                  Container(
+                    width: 200,
+                    alignment: Alignment.center,
+                    child: Text(
+                      "장점 : 음.... 저는 잘 모르겟는데 MBTI E라서 장점이란 얘기를 많이 들었습니다 그러면 장점이겠죠? ㅎㅎ",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ), // Container
+                  Container(
+                    width: 200,
+                    alignment: Alignment.center,
+                    child: Text(
+                      "블로그 | https://velog.io/@rheo191710",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ), // Container
+                ]
+                ) // Column
+            ) // Padding
+        ) // SingleChildScrollView
+    ); //Scaffold
+  } //Widget
+}
 
 // 5번째 페이지
 class FiveTab extends StatelessWidget {
