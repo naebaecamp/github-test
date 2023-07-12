@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'sub3.dart';
 
+int b = 0;
 void main() {
   runApp(const MyApp());
 }
@@ -72,12 +73,23 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-// 첫번째 페이지
-class FirstTab extends StatelessWidget {
+class FirstTab extends StatefulWidget {
   const FirstTab({Key? key}) : super(key: key);
+  @override
+  State<FirstTab> createState() => _FirstTab();
+}
 
+// 첫번째 페이지
+class _FirstTab extends State<FirstTab> {
   @override
   Widget build(BuildContext context) {
+    List<Map<String, dynamic>> userList = [
+      {"userName": "박준수", "url": "http://wagzack.synology.me/js_trans.png"},
+      {"userName": "박용석", "url": "http://wagzack.synology.me/ys_trans.png"},
+      {"userName": "남경화", "url": "http://wagzack.synology.me/char_trans.png"},
+      {"userName": "박준범", "url": "http://wagzack.synology.me/jb_trans.png"},
+      {"userName": "이상훈", "url": "http://wagzack.synology.me/sh_trans.png"},
+    ];
     return Container(
       color: Color(0xff5f9234),
       child: SafeArea(
@@ -92,10 +104,49 @@ class FirstTab extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Container(
-                child: Image.network(
-                  "http://wagzack.synology.me/set.png",
-                ),
+              child: Row(
+                children: <Widget>[
+                  GestureDetector(
+                    onTap: () {},
+                    child: Image.network(
+                      "http://wagzack.synology.me/js_trans.png",
+                      width: 70,
+                      height: 70,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Image.network(
+                      "http://wagzack.synology.me/ys_trans.png",
+                      width: 70,
+                      height: 70,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Image.network(
+                      "http://wagzack.synology.me/char_trans.png",
+                      width: 70,
+                      height: 70,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Image.network(
+                      "http://wagzack.synology.me/jb_trans.png",
+                      width: 70,
+                      height: 70,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Image.network(
+                      "http://wagzack.synology.me/sh_trans.png",
+                      width: 70,
+                      height: 70,
+                    ),
+                  ),
+                ],
               ),
             ),
             SizedBox(
@@ -115,73 +166,92 @@ class FirstTab extends StatelessWidget {
               height: 20,
             ),
             Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: EdgeInsets.only(
+                top: 60,
+                left: 60,
+              ),
               child: Row(
                 children: [
-                  GestureDetector(
-                    onTap: () {
-                      DefaultTabController.of(context).animateTo(1);
+                  IconButton(
+                    onPressed: () {
+                      setState(() {
+                        switch (b) {
+                          case 0:
+                            b = 4;
+                            break;
+                          case 1:
+                            b = 0;
+                            break;
+                          case 2:
+                            b = 1;
+                            break;
+                          case 3:
+                            b = 2;
+                            break;
+                          case 4:
+                            b = 3;
+                            break;
+                        }
+                      });
                     },
-                    child: Image.network(
-                      "http://wagzack.synology.me/js_trans.png",
-                      width: 100,
-                      height: 100,
+                    icon: Icon(
+                      Icons.keyboard_arrow_left_rounded,
+                      size: 50,
                     ),
                   ),
-                  Spacer(),
-                  GestureDetector(
-                    onTap: () {
-                      DefaultTabController.of(context).animateTo(2);
-                    },
-                    child: Image.network(
-                      "http://wagzack.synology.me/ys_trans.png",
-                      width: 100,
-                      height: 100,
-                    ),
+                  SizedBox(
+                    width: 15,
                   ),
-                  Spacer(),
-                  GestureDetector(
-                    onTap: () {
-                      DefaultTabController.of(context).animateTo(3);
+                  Column(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          DefaultTabController.of(context).animateTo(b + 1);
+                        },
+                        child: Image.network(
+                          userList[b]['url'],
+                          width: 150,
+                          height: 150,
+                        ),
+                      ),
+                      Text(
+                        userList[b]['userName'],
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18),
+                      ),
+                    ],
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      setState(() {
+                        switch (b) {
+                          case 0:
+                            b = 1;
+                            break;
+                          case 1:
+                            b = 2;
+                            break;
+                          case 2:
+                            b = 3;
+                            break;
+                          case 3:
+                            b = 4;
+                            break;
+                          case 4:
+                            b = 0;
+                            break;
+                        }
+                        print("b = $b 입니다.");
+                      });
                     },
-                    child: Image.network(
-                      "http://wagzack.synology.me/char_trans.png",
-                      width: 100,
-                      height: 100,
+                    icon: Icon(
+                      Icons.keyboard_arrow_right_rounded,
+                      size: 50,
                     ),
                   ),
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 50.0, right: 50),
-              child: Row(
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      DefaultTabController.of(context).animateTo(4);
-                    },
-                    child: Image.network(
-                      "http://wagzack.synology.me/jb_trans.png",
-                      width: 100,
-                      height: 100,
-                    ),
-                  ),
-                  Spacer(),
-                  GestureDetector(
-                    onTap: () {
-                      DefaultTabController.of(context).animateTo(5);
-                    },
-                    child: Image.network(
-                      "http://wagzack.synology.me/sh_trans.png",
-                      width: 100,
-                      height: 100,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Spacer(),
           ],
         ),
       ),
@@ -509,7 +579,7 @@ class ThirdTab extends StatelessWidget {
         backgroundColor: Colors.teal[50],
         elevation: 0.0,
         leading: IconButton(
-          onPressed: () => _HomePageState(),
+          onPressed: () => DefaultTabController.of(context).animateTo(0),
           icon: Icon(
             Icons.arrow_back_rounded,
             color: Colors.black,
