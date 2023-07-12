@@ -99,7 +99,7 @@ class FourTab extends StatelessWidget {
                 width: 200,
                 alignment: Alignment.center,
                 child: Text(
-                  "우유부단함을 싫어해서 확실한 성격입니다. 일을 미루는 것을 싫어하며, 시작한 것에 끝을 보며, 주어진 일은 철저하게 처리하는 스타일입니다. .",
+                  "우유부단함을 싫어해서 확실한 성격입니다. 일을 미루는 것을 싫어하며, 시작한 것에 끝을 보며, 주어진 일은 철저하게 처리하는 스타일입니다.",
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w500,
