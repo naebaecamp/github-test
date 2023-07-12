@@ -425,8 +425,8 @@ class FourthTab extends StatelessWidget {
           title: Text(
             "박준범",
             style: TextStyle(fontSize: 20),
-          ),
-        ),
+          ), // Text
+        ), // AppBar
         body: SingleChildScrollView(
             child: Padding(
                 padding: const EdgeInsets.all(10),
@@ -436,8 +436,8 @@ class FourthTab extends StatelessWidget {
                     child: Image.network(
                       "http://wagzack.synology.me/jb_trans.png",
                       width: 81,
-                    ),
-                  ),
+                    ), // Image.network
+                  ), // Padding
                   Text(
                     "박준범",
                     style: TextStyle(
@@ -446,11 +446,11 @@ class FourthTab extends StatelessWidget {
                       color: Colors.black,
                     ),
                     textAlign: TextAlign.center,
-                  ),
+                  ), 
                   Text(
                     'MBTI | ESTP',
                     style: TextStyle(fontSize: 20),
-                  ),
+                  ), // Text
                   Container(
                     width: 200,
                     alignment: Alignment.center,
@@ -462,7 +462,7 @@ class FourthTab extends StatelessWidget {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                  ),
+                  ), // Container
                   Container(
                     width: 200,
                     alignment: Alignment.center,
@@ -474,7 +474,7 @@ class FourthTab extends StatelessWidget {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                  ),
+                  ), // Container
                   Container(
                     width: 200,
                     alignment: Alignment.center,
@@ -486,7 +486,7 @@ class FourthTab extends StatelessWidget {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                  ),
+                  ), // Container
                   Container(
                     width: 200,
                     alignment: Alignment.center,
@@ -497,8 +497,12 @@ class FourthTab extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                  ),
-                ]))));
+                  ), // Container
+                ]
+                ) // Column
+            ) // Padding
+        ) // SingleChildScrollView
+    ); //Scaffold
   } //Widget
 }
 
