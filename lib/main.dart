@@ -79,25 +79,110 @@ class FirstTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Colors.red[300]!, Colors.red[600]!]),
-      ),
-      child: Container(
-        alignment: Alignment.topCenter,
-        margin: EdgeInsets.only(
-          top: 100,
-          left: 20,
-          right: 20,
-        ),
-        width: 50,
-        height: 50,
-        decoration: BoxDecoration(shape: BoxShape.circle),
-        child: Image.network(
-          "https://velog.velcdn.com/images/subak/post/03defd1c-a5a9-4f69-8dbd-9b2cf4b1d24b/image.png",
-          fit: BoxFit.cover,
+      color: Color(0xff5f9234),
+      child: SafeArea(
+        child: Column(
+          children: [
+            Text(
+              "9조 안경개발자들",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                child: Image.network(
+                  "http://wagzack.synology.me/set.png",
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                child: Text(
+                  "5명 모두가 안경을쓰고있는 안경개발자들의 팀원들을 소개합니다!",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                decoration: BoxDecoration(border: Border.all()),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      DefaultTabController.of(context).animateTo(1);
+                    },
+                    child: Image.network(
+                      "http://wagzack.synology.me/js_trans.png",
+                      width: 100,
+                      height: 100,
+                    ),
+                  ),
+                  Spacer(),
+                  GestureDetector(
+                    onTap: () {
+                      DefaultTabController.of(context).animateTo(2);
+                    },
+                    child: Image.network(
+                      "http://wagzack.synology.me/ys_trans.png",
+                      width: 100,
+                      height: 100,
+                    ),
+                  ),
+                  Spacer(),
+                  GestureDetector(
+                    onTap: () {
+                      DefaultTabController.of(context).animateTo(3);
+                    },
+                    child: Image.network(
+                      "http://wagzack.synology.me/char_trans.png",
+                      width: 100,
+                      height: 100,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 50.0, right: 50),
+              child: Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      DefaultTabController.of(context).animateTo(4);
+                    },
+                    child: Image.network(
+                      "http://wagzack.synology.me/jb_trans.png",
+                      width: 100,
+                      height: 100,
+                    ),
+                  ),
+                  Spacer(),
+                  GestureDetector(
+                    onTap: () {
+                      DefaultTabController.of(context).animateTo(5);
+                    },
+                    child: Image.network(
+                      "http://wagzack.synology.me/sh_trans.png",
+                      width: 100,
+                      height: 100,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Spacer(),
+          ],
         ),
       ),
     );
@@ -110,57 +195,304 @@ class SecondTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blue[500],
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 40, left: 20),
-            child: Row(
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    DefaultTabController.of(context).animateTo(0);
-                  },
-                  child: Icon(
-                    Icons.arrow_left,
-                    color: Colors.black,
-                    size: 30,
+    return ListView(
+      children: [
+        Column(
+          children: [
+            Container(
+              color: Colors.blue[500],
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 15, left: 10),
+                    child: Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            DefaultTabController.of(context).animateTo(0);
+                          },
+                          child: Icon(
+                            Icons.arrow_back,
+                            color: Colors.black,
+                            size: 30,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                  Text(
+                    "-프로필 소개-",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    width: 200,
+                    height: 200,
+                    decoration: BoxDecoration(
+                        color: Colors.blue[300], shape: BoxShape.circle),
+                    child: Image.network(
+                      "http://wagzack.synology.me/js_trans.png",
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "- 기본 정보 -",
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "이름 ㅣ 박준수",
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "성별 ㅣ 남자    ",
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "MBTI ㅣ INFP     ",
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Divider(
+                    height: 10,
+                    color: Colors.black54,
+                    indent: 50,
+                    endIndent: 50,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "- 상세 정보 -",
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    width: 300,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Flexible(
+                          child: RichText(
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 5,
+                            text: TextSpan(
+                              text:
+                                  "소개 ㅣ대학생활때 공부해본 코딩에 관심을 가지고있다가 기회가 되어 개발자로서 커리어 전환하기 위해 스파르타에 합류했습니다.",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                                height: 1.5,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    width: 300,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Flexible(
+                          child: RichText(
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 5,
+                            text: TextSpan(
+                              text:
+                                  "스타일 ㅣ소심함이 많아 거의 하자는대로 하지만 답답한건 못참고 나설때가 있음.\n"
+                                  "협업시 시키는 일은 확실하게 끝내려고함.",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                                height: 1.5,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    width: 300,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Flexible(
+                          child: RichText(
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 5,
+                            text: TextSpan(
+                              text: "장점 ㅣ 혼자 잘 놀음.\n성격이 둥글둥글해서 친하게 지내기 편함.",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                                height: 1.5,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    width: 300,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Flexible(
+                          child: RichText(
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 5,
+                            text: TextSpan(
+                              text: "단점 ㅣ INFP",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                                height: 1.5,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    width: 300,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Flexible(
+                          child: RichText(
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 5,
+                            text: TextSpan(
+                              text: "좋아하는 것 ㅣ 게임",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                                height: 1.5,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    width: 300,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Flexible(
+                          child: RichText(
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 5,
+                            text: TextSpan(
+                              text: "싫어하는 것 ㅣ 추운 환경",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                                height: 1.5,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    width: 300,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Flexible(
+                          child: RichText(
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 5,
+                            text: TextSpan(
+                              text: "블로그 ㅣ https://velog.io/@subak ",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                                height: 1.5,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-          Text(
-            "박준수",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-              color: Colors.white,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Container(
-            alignment: Alignment.center,
-            width: 200,
-            height: 200,
-            decoration:
-                BoxDecoration(color: Colors.blue[300], shape: BoxShape.circle),
-            child: Image.network(
-              "http://wagzack.synology.me/js_trans.png",
-              fit: BoxFit.cover,
-            ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Text('MBTI ▶ INFP'),
-          Text("종족 : 인간"),
-        ],
-      ),
+          ],
+        ),
+      ],
     );
   }
 }
