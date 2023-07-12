@@ -803,7 +803,9 @@ class FourthTab extends StatelessWidget {
           leading: Row(
             children: [
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  DefaultTabController.of(context).animateTo(0);
+                },
                 icon: Icon(CupertinoIcons.arrow_left, color: Colors.white),
               ),
             ], // Text
