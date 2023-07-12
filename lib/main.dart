@@ -67,8 +67,7 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         );
-      }
-    ),
+      }),
     );
   }
 }
@@ -321,6 +320,7 @@ class SecondTab extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
                   SizedBox(
@@ -331,6 +331,7 @@ class SecondTab extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
                   SizedBox(
@@ -341,6 +342,7 @@ class SecondTab extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
                   SizedBox(
@@ -351,6 +353,7 @@ class SecondTab extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
                   SizedBox(
@@ -370,6 +373,7 @@ class SecondTab extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
                   SizedBox(
@@ -390,7 +394,7 @@ class SecondTab extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.black,
+                                color: Colors.white,
                                 height: 1.5,
                               ),
                             ),
@@ -418,7 +422,7 @@ class SecondTab extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.black,
+                                color: Colors.white,
                                 height: 1.5,
                               ),
                             ),
@@ -444,7 +448,7 @@ class SecondTab extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.black,
+                                color: Colors.white,
                                 height: 1.5,
                               ),
                             ),
@@ -470,7 +474,7 @@ class SecondTab extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.black,
+                                color: Colors.white,
                                 height: 1.5,
                               ),
                             ),
@@ -496,7 +500,7 @@ class SecondTab extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.black,
+                                color: Colors.white,
                                 height: 1.5,
                               ),
                             ),
@@ -522,7 +526,7 @@ class SecondTab extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.black,
+                                color: Colors.white,
                                 height: 1.5,
                               ),
                             ),
@@ -548,7 +552,7 @@ class SecondTab extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.black,
+                                color: Colors.white,
                                 height: 1.5,
                               ),
                             ),
