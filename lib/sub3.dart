@@ -15,14 +15,16 @@ class FourTab extends StatelessWidget {
         leading: Row(
           children: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                DefaultTabController.of(context).animateTo(0);
+              },
               icon: Icon(CupertinoIcons.arrow_left, color: Colors.white),
             ),
           ],
         ),
         leadingWidth: 100,
         title: Text(
-          "남경화",
+          '',
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.w600,
@@ -50,14 +52,18 @@ class FourTab extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 12),
-              Container(
-                width: 200,
-                alignment: Alignment.center,
-                child: Text(
-                  "남경화",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Container(
+                  width: 200,
+                  alignment: Alignment.center,
+                  child: Text(
+                    '남경화',
+                    style: TextStyle(
+                      fontSize: 28,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
               ),
@@ -65,10 +71,27 @@ class FourTab extends StatelessWidget {
                 width: 200,
                 alignment: Alignment.center,
                 child: Text(
-                  "INFJ",
+                  "I N F J",
                   style: TextStyle(
+                    fontSize: 24,
                     color: Colors.white,
                     fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  width: 200,
+                  alignment: Alignment.center,
+                  child: Text(
+                    '" 안드로이드 7기에 합류하게 된 남경화 입니다. 비전공자이지만 캠프기간 동안 잘부탁드립니다! " ',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 18,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
@@ -76,46 +99,27 @@ class FourTab extends StatelessWidget {
                 width: 200,
                 alignment: Alignment.center,
                 child: Text(
-                  "소개 : Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                  "우유부단함을 싫어해서 확실한 성격입니다. 일을 미루는 것을 싫어하며, 시작한 것에 끝을 보며, 주어진 일은 철저하게 처리하는 스타일입니다. .",
                   style: TextStyle(
                     color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Container(
-                width: 200,
-                alignment: Alignment.center,
-                child: Text(
-                  "스타일 |\n Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Container(
-                width: 200,
-                alignment: Alignment.center,
-                child: Text(
-                  "장점 |\n Contrary to popular belief, Lorem Ipsum is not simply random text.",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16,
                   ),
                   textAlign: TextAlign.center,
                 ),
               ),
-              Container(
-                width: 200,
-                alignment: Alignment.center,
-                child: Text(
-                  "블로그 | https://velog.io/@wack",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  width: 200,
+                  alignment: Alignment.center,
+                  child: Text(
+                    "블로그 | https://velog.io/@wack",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
               ),
