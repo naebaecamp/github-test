@@ -101,53 +101,6 @@ class _FirstTab extends State<FirstTab> {
             SizedBox(
               height: 10,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: <Widget>[
-                  GestureDetector(
-                    onTap: () {},
-                    child: Image.network(
-                      "http://wagzack.synology.me/js_trans.png",
-                      width: 70,
-                      height: 70,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Image.network(
-                      "http://wagzack.synology.me/ys_trans.png",
-                      width: 70,
-                      height: 70,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Image.network(
-                      "http://wagzack.synology.me/char_trans.png",
-                      width: 70,
-                      height: 70,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Image.network(
-                      "http://wagzack.synology.me/jb_trans.png",
-                      width: 70,
-                      height: 70,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Image.network(
-                      "http://wagzack.synology.me/sh_trans.png",
-                      width: 70,
-                      height: 70,
-                    ),
-                  ),
-                ],
-              ),
-            ),
             SizedBox(
               height: 10,
             ),
