@@ -98,7 +98,7 @@ class _FirstTab extends State<FirstTab> {
               Padding(
                 padding: const EdgeInsets.only(top: 50, bottom: 40),
                 child: Text(
-                  "9조 안경개발자들",
+                  " 9조 안경개발자들 ",
                   style: TextStyle(
                     fontWeight: FontWeight.w700,
                     fontSize: 40,
