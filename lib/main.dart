@@ -89,122 +89,143 @@ class _FirstTab extends State<FirstTab> {
       {"userName": "박준범", "url": "http://wagzack.synology.me/jb_trans.png"},
       {"userName": "이상훈", "url": "http://wagzack.synology.me/sh_trans.png"},
     ];
-    return Container(
-      color: Color(0xff5f9234),
-      child: SafeArea(
-        child: Column(
-          children: [
-            Text(
-              "9조 안경개발자들",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Container(
+    return SingleChildScrollView(
+      child: Container(
+        color: Color(0xff5f9234),
+        child: SafeArea(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 50, bottom: 40),
                 child: Text(
-                  "5명 모두가 안경을쓰고있는 안경개발자들의 팀원들을 소개합니다!",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  "9조 안경개발자들",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 40,
+                    color: Colors.white,
+                  ),
                 ),
-                decoration: BoxDecoration(border: Border.all()),
               ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                top: 60,
-                left: 60,
+              Padding(
+                padding: const EdgeInsets.only(left: 30, bottom: 30),
+                child: Row(
+                  children: <Widget>[],
+                ),
               ),
-              child: Row(
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      setState(() {
-                        switch (b) {
-                          case 0:
-                            b = 4;
-                            break;
-                          case 1:
-                            b = 0;
-                            break;
-                          case 2:
-                            b = 1;
-                            break;
-                          case 3:
-                            b = 2;
-                            break;
-                          case 4:
-                            b = 3;
-                            break;
-                        }
-                      });
-                    },
-                    icon: Icon(
-                      Icons.keyboard_arrow_left_rounded,
-                      size: 50,
+              Container(
+                alignment: Alignment.topCenter,
+                child: Image.network(
+                  "http://wagzack.synology.me/set.png",
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 20),
+                child: SizedBox(
+                  width: 350,
+                  child: Text(
+                    "팀 소개\n 팀 목표 ㅣ 중꺽마!\n 팀 약속 ㅣ 1.모르는거 혼자서 해결하지 않고 같이 의논하기\n성실하게 하기\n포기하지않기\n"
+                    "회의 시간 지키기\n코드 합치는 시간 지키기\n출첵,점심,저녁,퇴실전 서로 인사하기",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                  top: 60,
+                  left: 60,
+                ),
+                child: Row(
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        setState(() {
+                          switch (b) {
+                            case 0:
+                              b = 4;
+                              break;
+                            case 1:
+                              b = 0;
+                              break;
+                            case 2:
+                              b = 1;
+                              break;
+                            case 3:
+                              b = 2;
+                              break;
+                            case 4:
+                              b = 3;
+                              break;
+                          }
+                        });
+                      },
+                      icon: Icon(
+                        Icons.keyboard_arrow_left_rounded,
+                        color: Colors.white,
+                        size: 50,
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  Column(
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          DefaultTabController.of(context).animateTo(b + 1);
-                        },
-                        child: Image.network(
-                          userList[b]['url'],
-                          width: 150,
-                          height: 150,
+                    SizedBox(
+                      width: 15,
+                    ),
+                    Column(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            DefaultTabController.of(context).animateTo(b + 1);
+                          },
+                          child: Image.network(
+                            userList[b]['url'],
+                            width: 150,
+                            height: 150,
+                          ),
                         ),
-                      ),
-                      Text(
-                        userList[b]['userName'],
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 18),
-                      ),
-                    ],
-                  ),
-                  IconButton(
-                    onPressed: () {
-                      setState(() {
-                        switch (b) {
-                          case 0:
-                            b = 1;
-                            break;
-                          case 1:
-                            b = 2;
-                            break;
-                          case 2:
-                            b = 3;
-                            break;
-                          case 3:
-                            b = 4;
-                            break;
-                          case 4:
-                            b = 0;
-                            break;
-                        }
-                        print("b = $b 입니다.");
-                      });
-                    },
-                    icon: Icon(
-                      Icons.keyboard_arrow_right_rounded,
-                      size: 50,
+                        Text(
+                          userList[b]['userName'],
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                ],
+                    IconButton(
+                      onPressed: () {
+                        setState(() {
+                          switch (b) {
+                            case 0:
+                              b = 1;
+                              break;
+                            case 1:
+                              b = 2;
+                              break;
+                            case 2:
+                              b = 3;
+                              break;
+                            case 3:
+                              b = 4;
+                              break;
+                            case 4:
+                              b = 0;
+                              break;
+                          }
+                          // print("b = $b 입니다.");
+                        });
+                      },
+                      icon: Icon(Icons.keyboard_arrow_right_rounded,
+                          size: 50, color: Colors.white),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
