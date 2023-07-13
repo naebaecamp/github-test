@@ -777,10 +777,9 @@ class ThirdTab extends StatelessWidget {
   }
 }
 
-
 // 5번째 페이지
-class FourthTab extends StatelessWidget {
-  const FourthTab({Key? key}) : super(key: key);
+class FifthTab extends StatelessWidget {
+  const FifthTab({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -891,10 +890,9 @@ class FourthTab extends StatelessWidget {
                     color: Colors.white,
                     fontWeight: FontWeight.w600,
                   ),
-                ), // Text
+                ),
               ), // Container
-            ]
-                ) // Column
+            ]) // Column
                 ) // Padding
             ) // SingleChildScrollView
         ); //Scaffold
