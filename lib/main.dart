@@ -900,7 +900,7 @@ class FourthTab extends StatelessWidget {
                     color: Colors.white,
                     fontWeight: FontWeight.w600,
                   ),
-                ),
+                ), // Text
               ), // Container
             ]
                 ) // Column
