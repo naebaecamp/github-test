@@ -94,15 +94,22 @@ class _FirstTab extends State<FirstTab> {
       child: SafeArea(
         child: Column(
           children: [
-            Text(
-              "9조 안경개발자들",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
+            Padding(
+              padding: const EdgeInsets.only(top: 50, bottom: 40),
+              child: Text(
+                "9조 안경개발자들",
+                style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 40,
+                  color: Colors.white,
+                ),
+              ),
             ),
             SizedBox(
               height: 10,
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(left: 30, bottom: 30),
               child: Row(
                 children: <Widget>[
                   GestureDetector(
@@ -152,13 +159,16 @@ class _FirstTab extends State<FirstTab> {
               height: 10,
             ),
             Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Container(
+              padding: const EdgeInsets.only(bottom: 20),
+              child: SizedBox(
+                width: 350,
                 child: Text(
                   "5명 모두가 안경을쓰고있는 안경개발자들의 팀원들을 소개합니다!",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white),
                 ),
-                decoration: BoxDecoration(border: Border.all()),
               ),
             ),
             SizedBox(
@@ -195,6 +205,7 @@ class _FirstTab extends State<FirstTab> {
                     },
                     icon: Icon(
                       Icons.keyboard_arrow_left_rounded,
+                      color: Colors.white,
                       size: 50,
                     ),
                   ),
@@ -216,7 +227,10 @@ class _FirstTab extends State<FirstTab> {
                       Text(
                         userList[b]['userName'],
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 18),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                          color: Colors.white,
+                        ),
                       ),
                     ],
                   ),
@@ -240,13 +254,11 @@ class _FirstTab extends State<FirstTab> {
                             b = 0;
                             break;
                         }
-                        print("b = $b 입니다.");
+                        // print("b = $b 입니다.");
                       });
                     },
-                    icon: Icon(
-                      Icons.keyboard_arrow_right_rounded,
-                      size: 50,
-                    ),
+                    icon: Icon(Icons.keyboard_arrow_right_rounded,
+                        size: 50, color: Colors.white),
                   ),
                 ],
               ),
