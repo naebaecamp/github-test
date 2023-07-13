@@ -827,8 +827,8 @@ class ThirdTab extends StatelessWidget {
 }
 
 // 5번째 페이지
-class FourthTab extends StatelessWidget {
-  const FourthTab({Key? key}) : super(key: key);
+class FiveTab extends StatelessWidget {
+  const FiveTab({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
