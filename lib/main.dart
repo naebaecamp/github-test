@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      initialIndex: 1,
+      initialIndex: 0,
       length: 6,
       child: Builder(builder: (context) {
         DefaultTabController.of(context)?.addListener(() {
@@ -96,22 +96,20 @@ class _FirstTab extends State<FirstTab> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 50),
+                padding: const EdgeInsets.only(top: 50, bottom: 40),
                 child: Text(
-                  "9조",
+                  "9조 안경개발자들",
                   style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 30,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 40,
                     color: Colors.white,
                   ),
                 ),
               ),
-              Text(
-                '" 안경개발자들 "',
-                style: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 40,
-                  color: Colors.white,
+              Padding(
+                padding: const EdgeInsets.only(left: 30, bottom: 30),
+                child: Row(
+                  children: <Widget>[],
                 ),
               ),
               Container(
@@ -122,133 +120,24 @@ class _FirstTab extends State<FirstTab> {
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 20),
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border(
-                      bottom: BorderSide(
-                        color: Colors.white,
-                        width: 3,
-                      ),
-                    ),
-                  ),
-                  child: Container(
-                    margin: EdgeInsets.only(bottom: 10, left: 10, right: 10),
-                    child: Text(
-                      "Introduce",
-                      style: TextStyle(
-                          fontSize: 40,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.white),
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(bottom: 20, left: 10, right: 10),
-                child: RichText(
-                  text: TextSpan(
-                    children: <TextSpan>[
-                      TextSpan(
-                        text: '중',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 26,
-                        ),
-                      ),
-                      TextSpan(
-                        text: '요한 것은 ',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 20,
-                        ),
-                      ),
-                      TextSpan(
-                        text: '꺽',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 26,
-                        ),
-                      ),
-                      TextSpan(
-                        text: '이지 않는 ',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 20,
-                        ),
-                      ),
-                      TextSpan(
-                        text: '마',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 26,
-                        ),
-                      ),
-                      TextSpan(
-                        text: '음!',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 20,
-                        ),
-                      ),
-                    ],
+                child: SizedBox(
+                  width: 350,
+                  child: Text(
+                    "팀 소개\n 팀 목표 ㅣ 중꺽마!\n 팀 약속 ㅣ 1.모르는거 혼자서 해결하지 않고 같이 의논하기\n성실하게 하기\n포기하지않기\n"
+                    "회의 시간 지키기\n코드 합치는 시간 지키기\n출첵,점심,저녁,퇴실전 서로 인사하기",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white),
                   ),
                 ),
               ),
               SizedBox(
-                width: 350,
-                height: 40,
-                child: Text(
-                  "Rule",
-                  style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white),
-                ),
-              ),
-              SizedBox(
-                width: 350,
-                child: Text(
-                  "1.모르는거 혼자서 끙끙대지말고 같이 고민하기",
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white),
-                ),
-              ),
-              SizedBox(
-                width: 350,
-                child: Text(
-                  "2. 포기하지않기",
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white),
-                ),
-              ),
-              SizedBox(
-                width: 350,
-                child: Text(
-                  "3. 시간약속 잘 지키기",
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white),
-                ),
-              ),
-              SizedBox(
-                width: 350,
-                child: Text(
-                  "4. 출석,점심,저녁,퇴실전 서로 꼭 인사하기",
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white),
-                ),
+                height: 20,
               ),
               Padding(
                 padding: EdgeInsets.only(
-                  top: 40,
-                  bottom: 40,
+                  top: 60,
                   left: 60,
                 ),
                 child: Row(
