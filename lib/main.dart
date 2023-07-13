@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      initialIndex: 1,
+      initialIndex: 0,
       length: 6,
       child: Builder(builder: (context) {
         DefaultTabController.of(context)?.addListener(() {
