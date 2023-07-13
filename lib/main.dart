@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'sub3.dart';
 
+int b = 0;
 void main() {
   runApp(const MyApp());
 }
@@ -71,117 +72,160 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-// 첫번째 페이지
-class FirstTab extends StatelessWidget {
+class FirstTab extends StatefulWidget {
   const FirstTab({Key? key}) : super(key: key);
+  @override
+  State<FirstTab> createState() => _FirstTab();
+}
 
+// 첫번째 페이지
+class _FirstTab extends State<FirstTab> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Color(0xff5f9234),
-      child: SafeArea(
-        child: Column(
-          children: [
-            Text(
-              "9조 안경개발자들",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
+    List<Map<String, dynamic>> userList = [
+      {"userName": "박준수", "url": "http://wagzack.synology.me/js_trans.png"},
+      {"userName": "박용석", "url": "http://wagzack.synology.me/ys_trans.png"},
+      {"userName": "남경화", "url": "http://wagzack.synology.me/char_trans.png"},
+      {"userName": "박준범", "url": "http://wagzack.synology.me/jb_trans.png"},
+      {"userName": "이상훈", "url": "http://wagzack.synology.me/sh_trans.png"},
+    ];
+    return SingleChildScrollView(
+      child: Container(
+        color: Color(0xff5f9234),
+        child: SafeArea(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 50, bottom: 40),
+                child: Text(
+                  "9조 안경개발자들",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 40,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 30, bottom: 30),
+                child: Row(
+                  children: <Widget>[],
+                ),
+              ),
+              Container(
+                alignment: Alignment.topCenter,
                 child: Image.network(
                   "http://wagzack.synology.me/set.png",
                 ),
               ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Container(
-                child: Text(
-                  "5명 모두가 안경을쓰고있는 안경개발자들의 팀원들을 소개합니다!",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 20),
+                child: SizedBox(
+                  width: 350,
+                  child: Text(
+                    "팀 소개\n 팀 목표 ㅣ 중꺽마!\n 팀 약속 ㅣ 1.모르는거 혼자서 해결하지 않고 같이 의논하기\n성실하게 하기\n포기하지않기\n"
+                    "회의 시간 지키기\n코드 합치는 시간 지키기\n출첵,점심,저녁,퇴실전 서로 인사하기",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white),
+                  ),
                 ),
-                decoration: BoxDecoration(border: Border.all()),
               ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Row(
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      DefaultTabController.of(context).animateTo(1);
-                    },
-                    child: Image.network(
-                      "http://wagzack.synology.me/js_trans.png",
-                      width: 100,
-                      height: 100,
-                    ),
-                  ),
-                  Spacer(),
-                  GestureDetector(
-                    onTap: () {
-                      DefaultTabController.of(context).animateTo(2);
-                    },
-                    child: Image.network(
-                      "http://wagzack.synology.me/ys_trans.png",
-                      width: 100,
-                      height: 100,
-                    ),
-                  ),
-                  Spacer(),
-                  GestureDetector(
-                    onTap: () {
-                      DefaultTabController.of(context).animateTo(3);
-                    },
-                    child: Image.network(
-                      "http://wagzack.synology.me/char_trans.png",
-                      width: 100,
-                      height: 100,
-                    ),
-                  ),
-                ],
+              SizedBox(
+                height: 20,
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 50.0, right: 50),
-              child: Row(
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      DefaultTabController.of(context).animateTo(4);
-                    },
-                    child: Image.network(
-                      "http://wagzack.synology.me/jb_trans.png",
-                      width: 100,
-                      height: 100,
+              Padding(
+                padding: EdgeInsets.only(
+                  top: 60,
+                  left: 60,
+                ),
+                child: Row(
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        setState(() {
+                          switch (b) {
+                            case 0:
+                              b = 4;
+                              break;
+                            case 1:
+                              b = 0;
+                              break;
+                            case 2:
+                              b = 1;
+                              break;
+                            case 3:
+                              b = 2;
+                              break;
+                            case 4:
+                              b = 3;
+                              break;
+                          }
+                        });
+                      },
+                      icon: Icon(
+                        Icons.keyboard_arrow_left_rounded,
+                        color: Colors.white,
+                        size: 50,
+                      ),
                     ),
-                  ),
-                  Spacer(),
-                  GestureDetector(
-                    onTap: () {
-                      DefaultTabController.of(context).animateTo(5);
-                    },
-                    child: Image.network(
-                      "http://wagzack.synology.me/sh_trans.png",
-                      width: 100,
-                      height: 100,
+                    SizedBox(
+                      width: 15,
                     ),
-                  ),
-                ],
+                    Column(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            DefaultTabController.of(context).animateTo(b + 1);
+                          },
+                          child: Image.network(
+                            userList[b]['url'],
+                            width: 150,
+                            height: 150,
+                          ),
+                        ),
+                        Text(
+                          userList[b]['userName'],
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        setState(() {
+                          switch (b) {
+                            case 0:
+                              b = 1;
+                              break;
+                            case 1:
+                              b = 2;
+                              break;
+                            case 2:
+                              b = 3;
+                              break;
+                            case 3:
+                              b = 4;
+                              break;
+                            case 4:
+                              b = 0;
+                              break;
+                          }
+                          // print("b = $b 입니다.");
+                        });
+                      },
+                      icon: Icon(Icons.keyboard_arrow_right_rounded,
+                          size: 50, color: Colors.white),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            Spacer(),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -250,6 +294,7 @@ class SecondTab extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
                   SizedBox(
@@ -260,6 +305,7 @@ class SecondTab extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
                   SizedBox(
@@ -270,6 +316,7 @@ class SecondTab extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
                   SizedBox(
@@ -280,6 +327,7 @@ class SecondTab extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
                   SizedBox(
@@ -299,6 +347,7 @@ class SecondTab extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
                   SizedBox(
@@ -319,7 +368,7 @@ class SecondTab extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.black,
+                                color: Colors.white,
                                 height: 1.5,
                               ),
                             ),
@@ -347,7 +396,7 @@ class SecondTab extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.black,
+                                color: Colors.white,
                                 height: 1.5,
                               ),
                             ),
@@ -373,7 +422,7 @@ class SecondTab extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.black,
+                                color: Colors.white,
                                 height: 1.5,
                               ),
                             ),
@@ -399,7 +448,7 @@ class SecondTab extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.black,
+                                color: Colors.white,
                                 height: 1.5,
                               ),
                             ),
@@ -425,7 +474,7 @@ class SecondTab extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.black,
+                                color: Colors.white,
                                 height: 1.5,
                               ),
                             ),
@@ -451,7 +500,7 @@ class SecondTab extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.black,
+                                color: Colors.white,
                                 height: 1.5,
                               ),
                             ),
@@ -477,7 +526,7 @@ class SecondTab extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.black,
+                                color: Colors.white,
                                 height: 1.5,
                               ),
                             ),
@@ -508,7 +557,7 @@ class ThirdTab extends StatelessWidget {
         backgroundColor: Colors.teal[50],
         elevation: 0.0,
         leading: IconButton(
-          onPressed: () => _HomePageState(),
+          onPressed: () => DefaultTabController.of(context).animateTo(0),
           icon: Icon(
             Icons.arrow_back_rounded,
             color: Colors.black,
@@ -778,8 +827,8 @@ class ThirdTab extends StatelessWidget {
 }
 
 // 5번째 페이지
-class FifthTab extends StatelessWidget {
-  const FifthTab({Key? key}) : super(key: key);
+class FiveTab extends StatelessWidget {
+  const FiveTab({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -914,42 +963,60 @@ class SixTab extends StatelessWidget {
           icon: Icon(Icons.arrow_back_rounded),
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              '팀원 | 이상훈',
-              style: TextStyle(fontSize: 20),
-            ),
-            Text(
-              'MBTI | ISTJ',
-              style: TextStyle(fontSize: 20),
-            ),
-            Text(
-              '소개 | 안녕하세요! 내일배움캠프 7기_Android 9조'
-              ' 이상훈입니다!'
-              ' 아직 미숙하지만'
-              ' 열심히 하겠습니다!',
-              style: TextStyle(fontSize: 20),
-            ),
-            Text(
-              '스타일 | 좋은 의견이 있으면 수용한다. '
-              '팀원과 좋은 관계를 유지하려 합니다. '
-              '먼저 의견을 제시하기보다는 경청부터 합니다.',
-              style: TextStyle(fontSize: 20),
-            ),
-            Text(
-              '장점 | 기억력이 좋다. 근면성실하다. 책임감이 강하다. '
-              '인내력이 강하다. 정직하다. 체계적이고 논리적이다. '
-              '실수한 것에 대해 즉각 수정한다. ',
-              style: TextStyle(fontSize: 20),
-            ),
-            Text(
-              '블로그: https://velog.io/@sanghoon_2',
-              style: TextStyle(fontSize: 20),
-            ),
-          ],
+      body: Container(
+        decoration: BoxDecoration(
+          color: Colors.blue,
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.network(
+                'http://wagzack.synology.me/sh_trans.png',
+                fit: BoxFit.cover,
+                width: 200,
+                height: 200,
+              ),
+              Text(
+                '팀원 | 이상훈',
+                style: TextStyle(fontSize: 20, color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+              Text(
+                'MBTI | ISTJ',
+                style: TextStyle(fontSize: 20, color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+              Text(
+                '소개 | 안녕하세요! 내일배움캠프'
+                ' 7기_Android 9조'
+                ' 이상훈입니다!'
+                ' 아직 미숙하지만'
+                ' 열심히 하겠습니다!',
+                style: TextStyle(fontSize: 20, color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+              Text(
+                '스타일 | 좋은 의견이 있으면 수용한다. '
+                '팀원과 좋은 관계를 유지하려 합니다. '
+                '먼저 의견을 제시하기보다는 경청부터 합니다.',
+                style: TextStyle(fontSize: 20, color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+              Text(
+                '장점 | 기억력이 좋다. 근면성실하다. 책임감이 강하다. '
+                '인내력이 강하다. 정직하다. 체계적이고 논리적이다. '
+                '실수한 것에 대해 즉각 수정한다. ',
+                style: TextStyle(fontSize: 20, color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+              Text(
+                '블로그: https://velog.io/@sanghoon_2',
+                style: TextStyle(fontSize: 20, color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
         ),
       ),
     );
